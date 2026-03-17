@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#3FB555"
+        android:text="Giải PT bậc 1"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="a = "
+            android:textColor="#FB5454"
+            android:textSize="30sp"/>
+
+        <EditText
+            android:id="@+id/txta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="b = "
+            android:textColor="#FB5454"
+            android:textSize="30sp"/>
+
+        <EditText
+            android:id="@+id/txtb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btngiai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giải"
+            android:backgroundTint="#8C8C8C"
+            android:textColor="#000000"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/btnxoa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xoá"
+            android:backgroundTint="#8C8C8C"
+            android:textColor="#000000"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/ketqua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textSize="40sp"/>
+
+</LinearLayout>

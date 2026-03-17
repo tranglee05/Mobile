@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <ImageView
+        android:src="@mipmap/ic_launcher"
+        android:layout_weight="20"
+        android:id="@+id/imgAvatar"
+        android:layout_width="0dp"
+        android:layout_height="100dp">
+    </ImageView>
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_weight="40"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#FF00"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full name"
+            android:id="@+id/txtFullname">
+        </TextView>
+        <TextView
+            android:textStyle="italic"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Addresss"
+            android:id="@+id/txtAddress">
+        </TextView>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="20"
+        android:id="@+id/imgFlag"
+        android:src="@mipmap/ic_launcher">
+    </ImageView>
+</LinearLayout>
