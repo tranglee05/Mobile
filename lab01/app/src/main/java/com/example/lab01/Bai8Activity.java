@@ -4,8 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 public class Bai8Activity extends AppCompatActivity {
     Button btnadd, btnin;
     EditText txtten, txtqq;
-    CheckBox cbnam, cbnu;
+    RadioGroup radioGroup;
     ArrayList<String> ds = new ArrayList<>();
 
     @Override
@@ -36,8 +37,7 @@ public class Bai8Activity extends AppCompatActivity {
         btnin = findViewById(R.id.btnin);
         txtten = findViewById(R.id.txtten);
         txtqq = findViewById(R.id.txtqq);
-        cbnam = findViewById(R.id.cbnam);
-        cbnu = findViewById(R.id.cbnu);
+        radioGroup = findViewById(R.id.radioGroup);
         addAction();
     }
     private void addAction(){
@@ -47,17 +47,16 @@ public class Bai8Activity extends AppCompatActivity {
                 String ten = txtten.getText().toString();
                 String qq = txtqq.getText().toString();
                 String gt;
-                if(cbnam.isChecked()){
-                    gt = "Nam";
-                }
-                else {gt = "Nữ";}
-                String tt = ten + "-" + gt + "-" + qq;
-                ds.add(tt);
-                Toast.makeText(Bai8Activity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
-                txtten.setText("");
-                txtqq.setText("");
+
+                int id = radioGroup.getCheckedRadioButtonId();
+                RadioButton r = findViewById(id);
+                gt = r.getText().toString();
+
+                String s = ten + " - " + gt + " - " + qq;
+                ds.add(s);
             }
         });
+
         btnin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

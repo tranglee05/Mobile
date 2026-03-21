@@ -2,6 +2,102 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main">
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#3FB576"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:text="TTSV"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Thông tin sinh viên"
+        android:textColor="#959191"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/txtname"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+    </EditText>
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
 
+        <RadioButton
+            android:id="@+id/rNam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nam"
+            android:layout_marginRight="50dp"/>
+
+        <RadioButton
+            android:id="@+id/rNu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nữ"/>
+    </RadioGroup>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Văn bằng 2"
+        android:layout_gravity="center">
+    </CheckBox>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="60dp"
+            android:id="@+id/imgavatar"
+            android:src="@mipmap/ic_launcher">
+        </ImageView>
+        <EditText
+            android:id="@+id/txtDes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </EditText>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btnOn"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="ON"
+        android:layout_marginLeft="50dp"
+        android:backgroundTint="#BAB7B7"
+        android:textColor="#161515">
+    </Button>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnXem"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="XEM TT"
+            android:layout_marginLeft="50dp"
+            android:backgroundTint="#BAB7B7"
+            android:textColor="#161616">
+        </Button>
+        <Button
+            android:id="@+id/btnHuy"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="HUỶ"
+            android:layout_marginLeft="80dp"
+            android:backgroundTint="#BAB7B7"
+            android:textColor="#161616">
+        </Button>
+    </LinearLayout>
 </LinearLayout>

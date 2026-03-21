@@ -51,22 +51,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <CheckBox
-                android:id="@+id/cbnam"
+            <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:text="Nam"
-                android:textSize="20sp"></CheckBox>
+                android:layout_height="wrap_content">
 
-            <CheckBox
-                android:id="@+id/cbnu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:text="Nữ"
-                android:textSize="20sp"></CheckBox>
+                <RadioButton
+                    android:id="@+id/rNam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nam"/>
+
+                <RadioButton
+                    android:id="@+id/rNu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nữ"/>
+            </RadioGroup>
         </LinearLayout>
     </LinearLayout>
 

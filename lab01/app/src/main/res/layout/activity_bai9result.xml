@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="#3F51B5"
-        android:text="Danh sách nhân viên"
+        android:text="Danh sách sinh viên"
         android:textColor="#FFFFFF"
         android:layout_gravity="center"
         android:textSize="30sp"
@@ -16,8 +16,6 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/itembg">
+        android:layout_height="match_parent">
     </ListView>
-
 </LinearLayout>
