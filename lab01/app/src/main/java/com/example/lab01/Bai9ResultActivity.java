@@ -2,27 +2,24 @@ package com.example.lab01;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.*;
+import android.widget.Button;
+import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
-public class Bai82ResultActivity extends AppCompatActivity {
-
+public class Bai9ResultActivity extends AppCompatActivity {
     ListView list;
     Button btnBack;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bai82result);
-
+        setContentView(R.layout.activity_bai9result);
         list = findViewById(R.id.list);
         btnBack = findViewById(R.id.btnBack);
-
-        ArrayList<Bai82> ds =
-                (ArrayList<Bai82>) getIntent().getSerializableExtra("ds");
-
-        Bai82Adapter adapter = new Bai82Adapter(this, ds, R.layout.line_bai82);
+        ArrayList<Bai9> ds= (ArrayList<Bai9>) getIntent().getSerializableExtra("ds");
+        Bai9Adapter adapter = new Bai9Adapter(this, ds, R.layout.line_bai9);
         list.setAdapter(adapter);
 
         btnBack.setOnClickListener(new View.OnClickListener() {

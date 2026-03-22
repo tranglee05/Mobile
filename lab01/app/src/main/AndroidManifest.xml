@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab01">
         <activity
-            android:name=".Bai8Activity"
+            android:name=".Bai9Activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Bai81ResultActivity"
+            android:name=".Bai9ResultActivity"
             android:exported="false"/>
     </application>
 

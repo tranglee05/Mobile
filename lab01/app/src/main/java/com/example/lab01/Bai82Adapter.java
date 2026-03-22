@@ -9,10 +9,12 @@ public class Bai82Adapter extends BaseAdapter {
 
     Context context;
     List<Bai82> ds;
+    int layout;
 
-    public Bai82Adapter(Context context, List<Bai82> ds) {
+    public Bai82Adapter(Context context, List<Bai82> ds, int layout) {
         this.context = context;
         this.ds = ds;
+        this.layout = layout;
     }
 
     @Override
@@ -33,21 +35,17 @@ public class Bai82Adapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup parent) {
 
-        if(view == null){
-            view = LayoutInflater.from(context)
-                    .inflate(R.layout.line_bai82, parent, false);
-        }
-
-        ImageView img = view.findViewById(R.id.img);
-        TextView ten = view.findViewById(R.id.txtTen);
-        TextView info = view.findViewById(R.id.txtInfo);
-
-        Bai82 nv = ds.get(i);
-
-        img.setImageResource(nv.getAvatar());
-        ten.setText(nv.getTen());
-        info.setText(nv.getGioitinh() + " - " + nv.getQue());
-
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        view = inflater.inflate(layout, null);
+        TextView txtTen, txtInfo;
+        ImageView img;
+        txtTen = view.findViewById(R.id.txtTen);
+        txtInfo = view.findViewById(R.id.txtInfo);
+        img = view.findViewById(R.id.img);
+        Bai82 bai82 = ds.get(i);
+        txtTen.setText(bai82.getTen());
+        txtInfo.setText(bai82.getGioitinh() + "-" + bai82.getQue());
+        img.setImageResource(bai82.getAvatar());
         return view;
     }
 }
