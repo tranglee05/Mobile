@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".ImpliciActivity"
+            android:exported="false" />
+        <activity
             android:name=".BActivity"
             android:exported="false" />
         <activity
