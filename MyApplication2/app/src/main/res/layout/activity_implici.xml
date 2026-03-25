@@ -25,7 +25,28 @@
             android:scaleType="centerInside"
             android:id="@+id/btnCamera">
         </ImageButton>
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gg"
+            android:scaleType="centerInside"
+            android:id="@+id/btngg">
+        </ImageButton>
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/sms"
+            android:scaleType="centerInside"
+            android:id="@+id/btnsms">
+        </ImageButton>
     </LinearLayout>
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ggmap"
+        android:scaleType="centerInside"
+        android:id="@+id/btnMap">
+    </ImageButton>
     <ImageView
         android:id="@+id/imgAnh"
         android:layout_width="match_parent"

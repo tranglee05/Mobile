@@ -20,7 +20,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class ImpliciActivity extends AppCompatActivity {
-    ImageButton btnCalling, btnCamera;
+    ImageButton btnCalling, btnCamera, btnMap, btngg, btnsms;
     ImageView imgAnh;
 
     @Override
@@ -41,7 +41,7 @@ public class ImpliciActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:0987654321"));
+                intent.setData(Uri.parse("tel:0829662312"));
                 startActivity(intent);
             }
         });
@@ -52,11 +52,38 @@ public class ImpliciActivity extends AppCompatActivity {
                 startActivityForResult(intent, 1234);
             }
         });
+        btngg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.youtube.com"));
+                startActivity(intent);
+            }
+        });
+        btnsms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("sms:0829662312"));
+                startActivity(intent);
+            }
+        });
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://map.coccoc.com/map/1127099122318871?borders=20.978130031116795,105.77868461608888,20.992053982740604,105.81164360046388"));
+                startActivity(intent);
+            }
+        });
     }
         private void mapping(){
             btnCalling = (ImageButton) findViewById(R.id.btnCalling);
             btnCamera = (ImageButton) findViewById(R.id.btnCamera);
             imgAnh = (ImageView) findViewById(R.id.imgAnh);
+            btnMap= (ImageButton) findViewById(R.id.btnMap);
+            btngg = (ImageButton) findViewById(R.id.btngg);
+            btnsms = (ImageButton) findViewById(R.id.btnsms);
         }
 
     @Override
