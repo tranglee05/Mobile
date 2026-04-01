@@ -16,7 +16,7 @@
         android:theme="@style/Theme.MyApplication">
 
         <activity
-            android:name=".ImpliciActivity"
+            android:name=".popupmenu"
             android:exported="true">
 
             <intent-filter>

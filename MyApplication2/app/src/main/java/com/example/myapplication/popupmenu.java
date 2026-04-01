@@ -35,7 +35,12 @@ public class popupmenu extends AppCompatActivity {
             return insets;
         });
         btnmenu = findViewById(R.id.btnmenu);
-        showmenu();
+        btnmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showmenu();
+            }
+        });
     }
     private void showmenu(){
         PopupMenu popupMenu = new PopupMenu(this, btnmenu);
