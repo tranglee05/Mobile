@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <item android:title="Calling"
+            android:icon="@drawable/calling"
+            android:id="@+id/mnuCalling"></item>
+        <item android:title="Camera"
+            android:icon="@drawable/camera"
+            android:id="@+id/mnuCamera"></item>
+        <item android:title="Google"
+            android:icon="@drawable/gg"
+            android:id="@+id/mnuGoogle">
+        </item>
+        <item android:title="SMS"
+            android:icon="@drawable/sms"
+            android:id="@+id/mnuSMS">
+        </item>
+        <item android:title="Map"
+            android:icon="@drawable/ggmap"
+            android:id="@+id/mnuMap">
+        </item>
+</menu>

@@ -1,11 +1,15 @@
 package com.example.myapplication;
 
+import android.Manifest;
 import android.app.ComponentCaller;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -15,6 +19,8 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -36,47 +42,98 @@ public class ImpliciActivity extends AppCompatActivity {
         mapping();
         addAction();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_bar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.mnuCalling) {
+            openCalling();
+        }else if (item.getItemId() == R.id.mnuCamera) {
+            openCamera();
+        } else if (item.getItemId() == R.id.mnuGoogle) {
+            openGoogle();
+        } else if (item.getItemId() == R.id.mnuSMS) {
+            openSMS();
+        } else if (item.getItemId() == R.id.mnuMap) {
+            openMap();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     private void addAction() {
         btnCalling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:0829662312"));
-                startActivity(intent);
+                openCalling();
             }
         });
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, 1234);
+                openCamera();
             }
         });
         btngg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://www.youtube.com"));
-                startActivity(intent);
+                openGoogle();
+
             }
         });
         btnsms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("sms:0829662312"));
-                startActivity(intent);
+                openSMS();
+
             }
         });
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("https://map.coccoc.com/map/1127099122318871?borders=20.978130031116795,105.77868461608888,20.992053982740604,105.81164360046388"));
-                startActivity(intent);
+                openMap();
+
             }
         });
     }
+        private void openCalling(){
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
+                    != PackageManager.PERMISSION_GRANTED) {
+
+                // 2. Nếu chưa có quyền, thực hiện xin quyền
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.CALL_PHONE}, 1);
+
+            } else {
+                // 3. Nếu đã có quyền, thực hiện cuộc gọi ngay lập tức
+                Intent intent = new Intent(Intent.ACTION_CALL); // Đổi sang ACTION_CALL
+                intent.setData(Uri.parse("tel:0829662312"));
+                startActivity(intent);
+            }
+        }
+        private void openCamera(){
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, 1234);
+        }
+        private void openGoogle(){
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://www.youtube.com"));
+            startActivity(intent);
+        }
+        private void openSMS(){
+            Intent intent = new Intent(Intent.ACTION_SENDTO);
+            intent.setData(Uri.parse("sms:0829662312"));
+            startActivity(intent);
+        }
+        private void openMap(){
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://map.coccoc.com/map/1127099122318871?borders=20.978130031116795,105.77868461608888,20.992053982740604,105.81164360046388"));
+            startActivity(intent);
+        }
         private void mapping(){
             btnCalling = (ImageButton) findViewById(R.id.btnCalling);
             btnCamera = (ImageButton) findViewById(R.id.btnCamera);
