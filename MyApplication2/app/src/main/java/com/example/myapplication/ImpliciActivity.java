@@ -11,8 +11,10 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -28,6 +30,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class ImpliciActivity extends AppCompatActivity {
     ImageButton btnCalling, btnCamera, btnMap, btngg, btnsms;
     ImageView imgAnh;
+    Button btnmenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +102,33 @@ public class ImpliciActivity extends AppCompatActivity {
 
             }
         });
+        btnmenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showmenu();
+            }
+        });
+    }
+    private void showmenu(){
+        PopupMenu popupMenu = new PopupMenu(this, btnmenu);
+        popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int id = item.getItemId();
+                if(id == R.id.mnuthem){
+                    btnmenu.setText("menuThem");
+                    return true;
+                }else if(id == R.id.mnusua){
+                    btnmenu.setText("menuSua");
+                    return true;
+                }else if(id == R.id.mnuxoa){
+                    btnmenu.setText("menuXoa");
+                }
+                return false;
+            }
+        });
+        popupMenu.show();
     }
         private void openCalling(){
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
@@ -141,6 +171,7 @@ public class ImpliciActivity extends AppCompatActivity {
             btnMap= (ImageButton) findViewById(R.id.btnMap);
             btngg = (ImageButton) findViewById(R.id.btngg);
             btnsms = (ImageButton) findViewById(R.id.btnsms);
+            btnmenu = findViewById(R.id.btnmenu);
         }
 
     @Override
