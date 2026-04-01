@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Màu xanh"
+        android:id="@+id/mnuxanh">
+    </item>
+    <item android:title="Màu đỏ"
+        android:id="@+id/mnudo">
+    </item>
+    <item android:title="Màu đen"
+        android:id="@+id/mnuden">
+    </item>
+    <item android:title="Màu vàng"
+        android:id="@+id/mnuvang">
+    </item>
+</menu>

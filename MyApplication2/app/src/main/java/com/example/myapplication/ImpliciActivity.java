@@ -5,15 +5,18 @@ import android.app.ComponentCaller;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
@@ -29,8 +32,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class ImpliciActivity extends AppCompatActivity {
     ImageButton btnCalling, btnCamera, btnMap, btngg, btnsms;
+    Button btnmenu, btnctmnu;
     ImageView imgAnh;
-    Button btnmenu;
+    LinearLayout clManHinh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class ImpliciActivity extends AppCompatActivity {
         });
         mapping();
         addAction();
+        registerForContextMenu(btnctmnu);
     }
 
     @Override
@@ -109,21 +114,51 @@ public class ImpliciActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.context_menu, menu);
+        menu.setHeaderTitle("Chọn màu");
+        menu.setHeaderIcon(R.mipmap.ic_launcher);
+    }
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.mnuxanh){
+            clManHinh.setBackgroundColor(Color.BLUE);
+            Toast.makeText(this, "Đã đổi sang màu xanh", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.mnudo) {
+            clManHinh.setBackgroundColor(Color.RED);
+            Toast.makeText(this, "Đã đổi sang màu đỏ", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.mnuden) {
+            clManHinh.setBackgroundColor(Color.BLACK);
+            Toast.makeText(this, "Đã đổi sang màu đen", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.mnuvang) {
+            clManHinh.setBackgroundColor(Color.YELLOW);
+            Toast.makeText(this, "Đã đổi sang màu vàng", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onContextItemSelected(item);
+    }
     private void showmenu(){
         PopupMenu popupMenu = new PopupMenu(this, btnmenu);
         popupMenu.getMenuInflater().inflate(R.menu.popup_menu, popupMenu.getMenu());
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
+                Toast.makeText(ImpliciActivity.this, "Bạn chọn " + item.getTitle(), Toast.LENGTH_SHORT).show();
                 int id = item.getItemId();
                 if(id == R.id.mnuthem){
-                    btnmenu.setText("menuThem");
+                    btnmenu.setText("Them");
                     return true;
                 }else if(id == R.id.mnusua){
-                    btnmenu.setText("menuSua");
+                    btnmenu.setText("Sua");
                     return true;
                 }else if(id == R.id.mnuxoa){
-                    btnmenu.setText("menuXoa");
+                    btnmenu.setText("Xoa");
                 }
                 return false;
             }
@@ -172,6 +207,8 @@ public class ImpliciActivity extends AppCompatActivity {
             btngg = (ImageButton) findViewById(R.id.btngg);
             btnsms = (ImageButton) findViewById(R.id.btnsms);
             btnmenu = findViewById(R.id.btnmenu);
+            btnctmnu = findViewById(R.id.btnctmnu);
+            clManHinh = findViewById(R.id.main);
         }
 
     @Override
