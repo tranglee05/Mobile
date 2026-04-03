@@ -6,7 +6,6 @@
         <item android:title="Sửa"
             android:id="@+id/mnusua"></item>
         <item android:title="Xoá"
-            android:icon="@drawable/gg"
             android:id="@+id/mnuxoa">
         </item>
 </menu>
