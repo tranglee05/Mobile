@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#66D3E2"
+    android:layout_gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đăng nhập hệ thống"
+        android:textColor="#C81CED"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_gravity="center">
+    </TextView>
+    <EditText
+        android:id="@+id/txtpass"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Nhập mật khẩu"
+        android:textColor="#615B5B">
+    </EditText>
+    <EditText
+        android:id="@+id/txtuser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Nhập tài khoản"
+        android:textColor="#615B5B">
+    </EditText>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="20dp">
+        <Button
+            android:id="@+id/btndn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đăng nhập">
+        </Button>
+        <Button
+            android:id="@+id/btnhuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Huỷ">
+        </Button>
+    </LinearLayout>
+</LinearLayout>

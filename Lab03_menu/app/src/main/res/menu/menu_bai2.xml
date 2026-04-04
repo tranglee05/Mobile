@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/mnusearch"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always">
+    </item>
+    <item android:id="@+id/mnucong"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Add"
+        app:showAsAction="always">
+    </item>
+    <item android:id="@+id/mnusetting"
+        android:title="Settings">
+        <menu>
+            <item android:id="@+id/mnuadd"
+                android:title="add">
+            </item>
+            <item android:id="@+id/mnuupdate"
+                android:title="update">
+            </item>
+            <item android:id="@+id/mnudelete"
+                android:title="delete">
+            </item>
+        </menu>
+    </item>
+    <item android:id="@+id/mnufeedback"
+        android:title="Feedback">
+    </item>
+    <item android:id="@+id/mnuhelp"
+        android:title="Help">
+    </item>
+</menu>
