@@ -7,6 +7,22 @@
     android:layout_height="match_parent"
     tools:context=".BookListActivity"
     android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QUẢN LÝ SÁCH"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="#62CBFF"
+        android:gravity="center">
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên sách:"
+        android:textSize="16sp"
+        android:textStyle="bold">
+    </TextView>
     <EditText
         android:id="@+id/txtname"
         android:layout_width="match_parent"
@@ -16,6 +32,13 @@
         android:textColor="#999999"
         android:layout_gravity="center">
     </EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Số trang:"
+        android:textSize="16sp"
+        android:textStyle="bold">
+    </TextView>
     <EditText
         android:id="@+id/txtpage"
         android:layout_width="match_parent"
@@ -25,6 +48,13 @@
         android:textColor="#999999"
         android:layout_gravity="center">
     </EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giá bán:"
+        android:textSize="16sp"
+        android:textStyle="bold">
+    </TextView>
     <EditText
         android:id="@+id/txtprice"
         android:layout_width="match_parent"
@@ -33,6 +63,13 @@
         android:textSize="16sp"
         android:textColor="#999999">
     </EditText>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mô tả:"
+        android:textSize="16sp"
+        android:textStyle="bold">
+    </TextView>
     <EditText
         android:id="@+id/txtdesc"
         android:layout_width="match_parent"
