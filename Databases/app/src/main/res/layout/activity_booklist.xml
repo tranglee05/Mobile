@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookListActivity"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/txtname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập tên sách"
+        android:textSize="16sp"
+        android:textColor="#999999"
+        android:layout_gravity="center">
+    </EditText>
+    <EditText
+        android:id="@+id/txtpage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập số trang"
+        android:textSize="16sp"
+        android:textColor="#999999"
+        android:layout_gravity="center">
+    </EditText>
+    <EditText
+        android:id="@+id/txtprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập giá"
+        android:textSize="16sp"
+        android:textColor="#999999">
+    </EditText>
+    <EditText
+        android:id="@+id/txtdesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập mô tả"
+        android:textSize="16sp"
+        android:textColor="#999999"
+        android:layout_gravity="center">
+    </EditText>
+
+    <Button
+        android:id="@+id/btnmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Menu"
+        android:backgroundTint="#A8A8A8"
+        android:textColor="@color/black"
+        android:layout_gravity="center">
+    </Button>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Danh sách các loại sách"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:background="#62CBFF"
+        android:gravity="center">
+    </TextView>
+    <ListView
+        android:id="@+id/lvData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:padding="16dp">
+    </ListView>
+</LinearLayout>

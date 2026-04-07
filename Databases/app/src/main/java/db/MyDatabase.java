@@ -36,10 +36,7 @@ public class MyDatabase extends SQLiteOpenHelper {
         Log.d("BOOKS", "DB create OK");
     }
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        String sql = "CREATE TABLE BOOKS(BookID integer PRIMARY KEY autoincrement,BookName text, Page integer, Price Float, Description text)";
-        sqLiteDatabase.execSQL(sql);
-        Log.d("BOOKS", "DB create OK");
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
     public Cursor selectSQL(String sql){
         SQLiteDatabase sqLiteDatabase = getReadableDatabase();
