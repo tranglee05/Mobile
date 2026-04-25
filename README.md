@@ -18,4 +18,5 @@ BÀI GIẢNG & BÀI TẬP TRÊN LỚP
 
 - lab03: ListView, GridView nâng cao.
 
-- lab03_menu: Menu.
+- lab03_menu: Menu cơ bản, popup menu, context menu.
+  
